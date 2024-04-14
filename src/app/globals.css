@@ -16,7 +16,7 @@
   }
 }
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,6 +24,42 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+@layer base{
+  h1{
+    @apply text-4xl font-extrabold;
+  }
+
+  hr{
+    @apply h-[3px] bg-gray-400 w-10/12 my-5;
+  }
+
+  input[type=text],
+  input[type=email],
+  input[type=password] {
+    @apply outline-none p-2 px-4 border border-gray-400 rounded-2xl;
+  }
+
+  main {
+    @apply flex flex-col items-center p-5
+  }
+}
+
+@layer components {
+  .confirm-button {
+    @apply p-3 mt-5 rounded-full shadow-md shadow-emerald-400 active:shadow-inner active:shadow-emerald-400 disabled:shadow-none disabled:text-gray-400 disabled:border-2;
+  }
+
+  .reset-button {
+    @apply p-3 mt-5 rounded-full shadow-md shadow-red-400 active:shadow-inner active:shadow-red-400 disabled:shadow-none disabled:text-gray-400 disabled:border-2;
+  }
+
+
+
+  .text-error {
+    @apply text-sm text-red-500 italic;
+  }
 }
 
 @layer utilities {
